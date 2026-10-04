@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuadro Comparativo: Paradigmas de Investigación Científica</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              500: '#22c55e',
+              600: '#16a34a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom scrollbars and subtle shadows */
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .print-expand {
+        overflow: visible !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen selection:bg-indigo-500 selection:text-white">
+
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-md shadow-indigo-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-600 block">Competencias Investigativas</span>
+          <h1 class="text-sm sm:text-base font-bold text-slate-900 leading-tight">Paradigmas de Investigación Científica</h1>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="no-print hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+          <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg>
+          Imprimir / PDF
+        </button>
+        <a href="#argumentacion" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-xs font-semibold transition-all">
+          Análisis Crítico
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8">
+    <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl space-y-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
+            Ciencia de Datos
+          </span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/30 text-emerald-200 border border-emerald-400/30">
+            Gnoseología y Epistemología
+          </span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-700/60 text-slate-300">
+            Lecturas: González Morales (2003) &amp; Ñaupas et al. (2018)
+          </span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+          Cuadro Comparativo: Paradigmas de la Investigación Científica
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Un paradigma no es solo un método, sino el <strong class="text-indigo-300">lente mental</strong> desde el que definimos qué es la realidad, qué preguntas son válidas y cómo justificamos la verdad científica. Esta matriz compara los enfoques clave y muestra su conexión directa con la toma de decisiones basada en datos.
+        </p>
+      </div>
+
+      <!-- Quick stats bar -->
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 border-t border-slate-700/60 text-left">
+        <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+          <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider block">Paradigma 1</span>
+          <p class="text-sm sm:text-base font-bold text-slate-100">Positivista</p>
+          <span class="text-[11px] text-slate-400">Explicar & Predecir</span>
+        </div>
+        <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+          <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider block">Paradigma 2</span>
+          <p class="text-sm sm:text-base font-bold text-slate-100">Interpretativo</p>
+          <span class="text-[11px] text-slate-400">Comprender Sentidos</span>
+        </div>
+        <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+          <span class="text-xs text-rose-400 font-semibold uppercase tracking-wider block">Paradigma 3</span>
+          <p class="text-sm sm:text-base font-bold text-slate-100">Sociocrítico</p>
+          <span class="text-[11px] text-slate-400">Emancipar & Transformar</span>
+        </div>
+        <div class="bg-slate-800/60 rounded-xl p-3 border border-slate-700/40">
+          <span class="text-xs text-emerald-400 font-semibold uppercase tracking-wider block">Paradigma 4</span>
+          <p class="text-sm sm:text-base font-bold text-slate-100">Pragmático / Mixto</p>
+          <span class="text-[11px] text-slate-400">Integración Práctica</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm no-print">
+      <!-- Search input -->
+      <div class="relative w-full sm:w-80">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          id="tableSearch" 
+          placeholder="Filtrar por concepto o palabra clave..." 
+          onkeyup="filterContent()" 
+          class="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-slate-800 placeholder-slate-400"
+        >
+      </div>
+
+      <!-- View switchers -->
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+        <div class="bg-slate-100 p-1 rounded-xl flex items-center gap-1 border border-slate-200">
+          <button 
+            id="btnTableView" 
+            onclick="switchView('table')" 
+            class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-white shadow-sm text-indigo-700 transition-all flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Vista Tabla
+          </button>
+          <button 
+            id="btnCardView" 
+            onclick="switchView('cards')" 
+            class="px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+            </svg>
+            Vista Tarjetas
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tableViewWrapper" class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all">
+      <div class="overflow-x-auto">
+        <table id="paradigmTable" class="w-full text-left border-collapse min-w-[900px]">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-100/80 text-xs font-bold uppercase tracking-wider text-slate-600">
+              <th class="p-4 w-[18%] bg-slate-200/50 sticky left-0 z-20 backdrop-blur-sm">Dimensión / Criterio</th>
+              <th class="p-4 w-[20.5%] text-blue-900 bg-blue-50/70 border-l border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                  <span>Positivista</span>
+                </div>
+                <span class="text-[10px] font-normal normal-case text-slate-500 block mt-0.5">Empírico-analítico / Cuantitativo</span>
+              </th>
+              <th class="p-4 w-[20.5%] text-amber-900 bg-amber-50/70 border-l border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+                  <span>Interpretativo</span>
+                </div>
+                <span class="text-[10px] font-normal normal-case text-slate-500 block mt-0.5">Hermenéutico / Cualitativo</span>
+              </th>
+              <th class="p-4 w-[20.5%] text-rose-900 bg-rose-50/70 border-l border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+                  <span>Sociocrítico</span>
+                </div>
+                <span class="text-[10px] font-normal normal-case text-slate-500 block mt-0.5">Dialéctico / Emancipador</span>
+              </th>
+              <th class="p-4 w-[20.5%] text-emerald-900 bg-emerald-50/70 border-l border-slate-200">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                  <span>Pragmático / Mixto</span>
+                </div>
+                <span class="text-[10px] font-normal normal-case text-slate-500 block mt-0.5">Integrador / Multimetódico</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-xs sm:text-sm">
+            <!-- Row 1: Origen -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Origen y referentes teóricos clave
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                Auguste Comte, Émile Durkheim, Círculo de Viena, Karl Popper (racionalismo crítico). Detallado en González Morales (2003) y Ñaupas et al. (2018).
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Wilhelm Dilthey, Max Weber (sociología comprensiva), Edmund Husserl, Hans-Georg Gadamer y Alfred Schutz.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Escuela de Frankfurt (Habermas, Adorno, Horkheimer), Paulo Freire, Carr y Kemmis (González Morales, 2003).
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Charles Sanders Peirce, John Dewey, Tashakkori &amp; Teddlie, John W. Creswell (Ñaupas et al., 2018).
+              </td>
+            </tr>
+
+            <!-- Row 2: Ontológica -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                ¿Cómo concibe la realidad? <span class="block text-[11px] font-normal text-slate-500">(Dimensión ontológica)</span>
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <span class="inline-block font-semibold text-blue-800 bg-blue-50 px-2 py-0.5 rounded mb-1">Única, objetiva y externa</span>
+                El mundo funciona con leyes universales que operan con total independencia de nuestros deseos o creencias.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <span class="inline-block font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded mb-1">Múltiple y construida</span>
+                La realidad social se produce a partir de los significados, vivencias y acuerdos cotidianos de las personas.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <span class="inline-block font-semibold text-rose-800 bg-rose-50 px-2 py-0.5 rounded mb-1">Histórica y condicionada</span>
+                La realidad actual no es natural; está moldeada por ideologías, tensiones económicas y relaciones de poder.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <span class="inline-block font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded mb-1">Plural y multidimensional</span>
+                Acepta que existen regularidades empíricas medibles junto con profundas experiencias subjetivas.
+              </td>
+            </tr>
+
+            <!-- Row 3: Epistemológica -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Relación sujeto-objeto <span class="block text-[11px] font-normal text-slate-500">(Dimensión epistemológica)</span>
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <strong class="text-slate-900">Independencia y neutralidad.</strong> El investigador observa desde fuera sin alterar el fenómeno para no contaminar la objetividad.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Cercanía y empatía.</strong> El conocimiento nace del diálogo horizontal y la interacción constante dentro del entorno del sujeto.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Compromiso y autorreflexión.</strong> Se rechaza la falsa neutralidad; el investigador actúa como facilitador del cambio social.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Interdependencia práctica.</strong> Se adopta distancia o cercanía según lo que exija la fase de investigación.
+              </td>
+            </tr>
+
+            <!-- Row 4: Propósito -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Propósito central de la investigación
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <strong class="text-slate-900">Explicar, controlar y predecir</strong> fenómenos mediante leyes causales o modelos probabilísticos formales.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Comprender e interpretar</strong> motivos, valores culturales y experiencias vividas en contextos particulares.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Emancipar y transformar</strong> estructuras opresivas, concientizando y empoderando a la comunidad.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <strong class="text-slate-900">Solucionar problemas concretos</strong> del mundo real con utilidad probada y rigor multienfoque.
+              </td>
+            </tr>
+
+            <!-- Row 5: Metodología -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Metodología y herramientas de recolección
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Deductivo y experimental:</span>
+                  <p class="text-xs text-slate-600">Muestreo probabilístico, pruebas estadísticas, encuestas cerradas estandarizadas y diseño de experimentos controlados.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Inductivo y dialógico:</span>
+                  <p class="text-xs text-slate-600">Entrevistas a profundidad, observación participante, historias de vida, diarios de campo y análisis de discurso narrativo.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Dialéctico y participativo:</span>
+                  <p class="text-xs text-slate-600">Investigación-Acción Participativa (IAP), talleres de autodiagnóstico, círculos de reflexión crítica y asambleas.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Diseño Mixto Integrado:</span>
+                  <p class="text-xs text-slate-600">Triangulación metodológica secuencial o concurrente, combinando métricas masivas con validación cualitativa.</p>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 6: Calidad -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Criterios de validez y rigor
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                Validez interna y externa, fiabilidad matemática, replicabilidad experimental y significancia estadística (p-valor, intervalos).
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Credibilidad, transferibilidad a contextos análogos, coherencia interna y reflexividad constante del investigador.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Autenticidad dialógica, compromiso ético demostrado y nivel real de transformación alcanzado con la comunidad.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Convergencia de resultados entre fuentes, consistencia lógica y aplicabilidad efectiva en el terreno real.
+              </td>
+            </tr>
+
+            <!-- Row 7: Fortalezas -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Principales fortalezas
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <ul class="list-disc pl-4 space-y-1 text-xs text-slate-600">
+                  <li>Gran capacidad de generalización poblacional.</li>
+                  <li>Precisión matemática y estandarización rigurosa.</li>
+                  <li>Facilita la replicación independiente de hallazgos.</li>
+                </ul>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <ul class="list-disc pl-4 space-y-1 text-xs text-slate-600">
+                  <li>Capta emociones, motivaciones y matices humanos.</li>
+                  <li>Alta flexibilidad para adaptarse a imprevistos en campo.</li>
+                  <li>Da voz a los sujetos sin reducirlos a un código numérico.</li>
+                </ul>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <ul class="list-disc pl-4 space-y-1 text-xs text-slate-600">
+                  <li>Genera empoderamiento en comunidades marginadas.</li>
+                  <li>Desmonta sesgos ideológicos y usos interesados de la ciencia.</li>
+                  <li>Une de forma indisoluble la teoría con la acción práctica.</li>
+                </ul>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <ul class="list-disc pl-4 space-y-1 text-xs text-slate-600">
+                  <li>Visión de 360° ante problemáticas complejas.</li>
+                  <li>Evita el reduccionismo de solo números o solo opiniones.</li>
+                  <li>Alta utilidad para resolver retos de la industria moderna.</li>
+                </ul>
+              </td>
+            </tr>
+
+            <!-- Row 8: Límites -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Límites y riesgos metodológicos
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                Riesgo de reduccionismo; puede ignorar el contexto sociohistórico y las motivaciones profundas que no son cuantificables.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Dificultad para extrapolar a gran escala; requiere controles estrictos de reflexividad para no incurrir en mero subjetivismo.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Riesgo de subordinar el rigor analítico al proselitismo político; cambios a menudo lentos o dependientes del entorno institucional.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Exige alta inversión de tiempo y recursos; desafío técnico para conciliar evidencias cuantitativas y cualitativas contradictorias.
+              </td>
+            </tr>
+
+            <!-- Row 9: Ciencias relacionadas -->
+            <tr class="table-row-item hover:bg-slate-50/80 transition-colors">
+              <td class="p-4 font-semibold text-slate-900 bg-slate-50/50 sticky left-0 z-10 border-r border-slate-200">
+                Tipos de ciencias afines
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Ciencias Fácticas &amp; Formales:</span>
+                  <p class="text-xs text-slate-600">Física, Química, Astronomía, Matemáticas, Estadística, Econometría y Psicometría.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Ciencias Sociales &amp; Humanas:</span>
+                  <p class="text-xs text-slate-600">Antropología cultural, Sociología cualitativa, Lingüística, Psicología comunitaria y Etnografía.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Ciencias Críticas &amp; Sociales:</span>
+                  <p class="text-xs text-slate-600">Pedagogía crítica, Sociología política, Trabajo Social transformador, Ecología política.</p>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                <div class="space-y-1">
+                  <span class="font-medium text-slate-900 block">Ciencias Interdisciplinarias:</span>
+                  <p class="text-xs text-slate-600">Salud Pública / Epidemiología, Políticas Públicas, Ciencia de Datos e Inteligencia Artificial.</p>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Row 10: Conexión Ciencia de Datos -->
+            <tr class="table-row-item hover:bg-indigo-50/30 transition-colors border-t-2 border-indigo-100">
+              <td class="p-4 font-semibold text-indigo-900 bg-indigo-50/60 sticky left-0 z-10 border-r border-indigo-200">
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  <span>Conexión con Ciencia de Datos</span>
+                </div>
+              </td>
+              <td class="p-4 text-slate-700 bg-white">
+                Base del modelado estadístico, algoritmos de Machine Learning supervisado, pruebas A/B y métricas de exactitud (RMSE, F1-Score).
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Esencial para investigación de experiencia de usuario (UX Research), entrevistas cualitativas y comprensión de cómo los clientes interpretan los datos.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                Clave para la auditoría de sesgos algorítmicos, justicia en IA (*Fairness*) y prevención de discriminación automatizada sobre poblaciones vulnerables.
+              </td>
+              <td class="p-4 text-slate-700 bg-white border-l border-slate-100">
+                El flujo de trabajo profesional del científico de datos: combinar predicciones numéricas con las necesidades reales del negocio y los usuarios humanos.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="cardViewWrapper" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Card: Positivista -->
+      <div class="bg-white rounded-2xl border border-blue-200 p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-blue-600"></div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase bg-blue-50 text-blue-700 tracking-wider">Cuantitativo</span>
+          <span class="text-xs text-slate-400">Comte, Durkheim, Popper</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Paradigma Positivista</h3>
+        <p class="text-xs text-slate-500 mb-4">Explicar, controlar y predecir regularidades mediante modelos empíricos objetivos.</p>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <span class="font-semibold text-slate-800 block">Ontología:</span>
+            <p class="text-slate-600">Realidad única y externa gobernada por leyes independientes del observador.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Epistemología:</span>
+            <p class="text-slate-600">Neutralidad absoluta. Distanciamiento metódico entre el sujeto y el objeto estudiado.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Fortalezas:</span>
+            <p class="text-slate-600">Precisión matemática, replicabilidad de experimentos y gran representatividad muestral.</p>
+          </div>
+          <div class="p-3 bg-blue-50/60 rounded-xl border border-blue-100 mt-2">
+            <span class="font-bold text-blue-900 block text-xs">En Ciencia de Datos:</span>
+            <p class="text-blue-800 text-[11px] mt-0.5">Modelado predictivo, regresión, redes neuronales y contrastación de hipótesis A/B.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: Interpretativo -->
+      <div class="bg-white rounded-2xl border border-amber-200 p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-amber-500"></div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase bg-amber-50 text-amber-700 tracking-wider">Cualitativo</span>
+          <span class="text-xs text-slate-400">Dilthey, Weber, Husserl</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Paradigma Interpretativo</h3>
+        <p class="text-xs text-slate-500 mb-4">Comprender los significados internos y sentidos construidos por los sujetos.</p>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <span class="font-semibold text-slate-800 block">Ontología:</span>
+            <p class="text-slate-600">Realidad múltiple e intersubjetiva; construida a través del lenguaje y la cultura.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Epistemología:</span>
+            <p class="text-slate-600">Cercanía y empatía. Comprensión mutua desde dentro del contexto sociocultural.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Fortalezas:</span>
+            <p class="text-slate-600">Profundidad de matices, sensibilidad al contexto humano y flexibilidad exploratoria.</p>
+          </div>
+          <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-100 mt-2">
+            <span class="font-bold text-amber-900 block text-xs">En Ciencia de Datos:</span>
+            <p class="text-amber-800 text-[11px] mt-0.5">Investigación UX, diseño de producto guiado por el dolor real del usuario y análisis de feedback.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: Sociocrítico -->
+      <div class="bg-white rounded-2xl border border-rose-200 p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-rose-600"></div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase bg-rose-50 text-rose-700 tracking-wider">Emancipador</span>
+          <span class="text-xs text-slate-400">Habermas, Freire, Adorno</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Paradigma Sociocrítico</h3>
+        <p class="text-xs text-slate-500 mb-4">Cuestionar relaciones de poder y transformar condiciones sociales de injusticia.</p>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <span class="font-semibold text-slate-800 block">Ontología:</span>
+            <p class="text-slate-600">Realidad sociohistórica tensionada por ideologías e intereses de dominación económica.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Epistemología:</span>
+            <p class="text-slate-600">Compromiso transformador; el investigador es facilitador y aprendiz junto al colectivo.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Fortalezas:</span>
+            <p class="text-slate-600">Capacidad real de empoderamiento, conciencia de los sesgos y acción comunitaria directa.</p>
+          </div>
+          <div class="p-3 bg-rose-50/60 rounded-xl border border-rose-100 mt-2">
+            <span class="font-bold text-rose-900 block text-xs">En Ciencia de Datos:</span>
+            <p class="text-rose-800 text-[11px] mt-0.5">Auditoría ética de IA, detección de sesgos en datos de entrenamiento y equidad algorítmica.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: Pragmático / Mixto -->
+      <div class="bg-white rounded-2xl border border-emerald-200 p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-emerald-600"></div>
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-xs font-bold uppercase bg-emerald-50 text-emerald-700 tracking-wider">Integrador</span>
+          <span class="text-xs text-slate-400">Peirce, Dewey, Creswell</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Paradigma Pragmático / Mixto</h3>
+        <p class="text-xs text-slate-500 mb-4">Combinar metodologías cuantitativas y cualitativas según el problema real a resolver.</p>
+        
+        <div class="space-y-3 text-xs">
+          <div>
+            <span class="font-semibold text-slate-800 block">Ontología:</span>
+            <p class="text-slate-600">Realidad plural que admite tanto regularidades estadísticas como complejidades humanas.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Epistemología:</span>
+            <p class="text-slate-600">Flexibilidad orientada a la utilidad práctica del hallazgo y resolución efectiva.</p>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-800 block">Fortalezas:</span>
+            <p class="text-slate-600">Perspectiva completa de 360°, neutraliza las debilidades aisladas de cada método único.</p>
+          </div>
+          <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100 mt-2">
+            <span class="font-bold text-emerald-900 block text-xs">En Ciencia de Datos:</span>
+            <p class="text-emerald-800 text-[11px] mt-0.5">Integración end-to-end: modelos computacionales validados frente al impacto humano en producción.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <section id="argumentacion" class="space-y-6 pt-4">
+      <div class="flex items-center gap-2">
+        <span class="h-6 w-1.5 bg-indigo-600 rounded-full"></span>
+        <h3 class="text-lg sm:text-xl font-bold text-slate-900">
+          Argumentación y Análisis de las Diferencias Fundamentales
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-base">
+            1
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base leading-snug">
+            Superación de la falsa dicotomía "números vs. palabras"
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Como señalan González Morales (2003) y Ñaupas et al. (2018), durante años existió una disputa académica que contraponía lo cuantitativo a lo cualitativo. Hoy entendemos que ningún método es superior en abstracto: la validez surge de la <strong>coherencia entre la pregunta de investigación y el camino elegido</strong> para responderla.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-base">
+            2
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base leading-snug">
+            La lección ética de la no neutralidad del conocimiento
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            El paradigma sociocrítico visibiliza que la ciencia nunca opera aislada de los intereses económicos e institucionales. Un algoritmo o modelo predictivo no es neutral por el solo hecho de basarse en matemáticas: si sus datos de entrenamiento arrastran sesgos históricos, solo servirá para automatizar desigualdades bajo una apariencia de objetividad técnica.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-base">
+            3
+          </div>
+          <h4 class="font-bold text-slate-900 text-sm sm:text-base leading-snug">
+            Síntesis aplicada para el Científico de Datos
+          </h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Nuestra labor requiere combinar el rigor <strong>positivista</strong> (métricas de error, optimización formal), la sensibilidad <strong>interpretativa</strong> (entender la experiencia y el dolor humano detrás de las métricas) y la vigilancia <strong>sociocrítica</strong> (garantizar equidad algorítmica y privacidad en las decisiones automáticas).
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="bg-slate-900 text-slate-200 rounded-3xl p-6 sm:p-8 space-y-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Bibliografía Obligatoria</span>
+          <h4 class="text-base sm:text-lg font-bold text-white">Fuentes Consultadas (Normas APA, 7.ª ed.)</h4>
+        </div>
+        <button 
+          onclick="copyReferences()" 
+          id="btnCopyRef"
+          class="no-print inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 border border-slate-700 transition-all">
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
+          <span id="copyBtnLabel">Copiar Referencias</span>
+        </button>
+      </div>
+
+      <div id="referencesBox" class="bg-slate-950/80 rounded-2xl p-5 border border-slate-800 text-xs sm:text-sm font-sans space-y-3 leading-relaxed text-slate-300">
+        <p class="pl-6 -indent-6">
+          González Morales, A. (2003). Los paradigmas de investigación en las ciencias sociales. <em>Islas</em>, <em>45</em>(138), 125-135. https://biblat.unam.mx/es/revista/islas/articulo/los-paradigmas-de-investigacion-en-las-ciencias-sociales
+        </p>
+        <p class="pl-6 -indent-6">
+          Ñaupas Paitán, H., Valdivia Dueñas, M. R., Palacios Vilela, J. J., y Romero Delgado, H. E. (2018). Capítulo II. La gnoseología y la epistemología. En <em>Metodología de la investigación cuantitativa-cualitativa y redacción de tesis</em> (5.ª ed., pp. 76-101). Ediciones de la U.
+        </p>
+      </div>
+    </section>
+
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200">
+      <p>Actividad Académica: Cuadro Comparativo de Paradigmas Científicos | Programa en Ciencia de Datos</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Switch between table and card view
+    function switchView(view) {
+      const tableWrapper = document.getElementById('tableViewWrapper');
+      const cardWrapper = document.getElementById('cardViewWrapper');
+      const btnTable = document.getElementById('btnTableView');
+      const btnCard = document.getElementById('btnCardView');
+
+      if (view === 'table') {
+        tableWrapper.classList.remove('hidden');
+        cardWrapper.classList.add('hidden');
+        btnTable.className = "px-3 py-1.5 text-xs font-semibold rounded-lg bg-white shadow-sm text-indigo-700 transition-all flex items-center gap-1.5";
+        btnCard.className = "px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5";
+      } else {
+        tableWrapper.classList.add('hidden');
+        cardWrapper.classList.remove('hidden');
+        btnCard.className = "px-3 py-1.5 text-xs font-semibold rounded-lg bg-white shadow-sm text-indigo-700 transition-all flex items-center gap-1.5";
+        btnTable.className = "px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 hover:text-slate-900 transition-all flex items-center gap-1.5";
+      }
+    }
+
+    // Filter table content based on keyword
+    function filterContent() {
+      const query = document.getElementById('tableSearch').value.toLowerCase();
+      const rows = document.querySelectorAll('.table-row-item');
+
+      rows.forEach(row => {
+        const rowText = row.innerText.toLowerCase();
+        if (rowText.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Safe clipboard copy helper using fallback
+    function copyReferences() {
+      const textToCopy = `González Morales, A. (2003). Los paradigmas de investigación en las ciencias sociales. Islas, 45(138), 125-135. https://biblat.unam.mx/es/revista/islas/articulo/los-paradigmas-de-investigacion-en-las-ciencias-sociales\n\nÑaupas Paitán, H., Valdivia Dueñas, M. R., Palacios Vilela, J. J., y Romero Delgado, H. E. (2018). Capítulo II. La gnoseología y la epistemología. En Metodología de la investigación cuantitativa-cualitativa y redacción de tesis (5.ª ed., pp. 76-101). Ediciones de la U.`;
+      
+      const textarea = document.createElement('textarea');
+      textarea.value = textToCopy;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      
+      try {
+        document.execCommand('copy');
+        const label = document.getElementById('copyBtnLabel');
+        label.innerText = '¡Copiado con éxito!';
+        setTimeout(() => {
+          label.innerText = 'Copiar Referencias';
+        }, 2500);
+      } catch (err) {
+        console.error('Error al copiar texto: ', err);
+      } finally {
+        document.body.removeChild(textarea);
+      }
+    }
+  </script>
+</body>
+</html>
